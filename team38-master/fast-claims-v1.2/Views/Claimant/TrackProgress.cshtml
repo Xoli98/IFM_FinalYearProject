@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "STEP 2: Track Progress";
+    Layout = "~/Views/Shared/_CLayout.cshtml";
+}
+
+
+<div class="container">
+   
+    <div class="row">
+    <br /><br />
+                <div class="col-lg-8">
+                    <h2 style="color:black">TRACK PROGRESS</h2>
+                    <hr />
+
+                    <br />
+                    <h5 style="color:black">
+                         @ViewBag.Title 
+                    </h5>
+                    
+                    <p style="color:black">
+                        Select the <b>Attach Documents</b> button, complete your claim number, click on <b>Submit </b>and attach the required document(s).<br />
+                    </p>
+
+                    @using (Html.BeginForm("VerifyAccount","Claim",FormMethod.Post))
+                    {
+
+                        <div class="form-group">
+                            <label for="contact-email">CLAIM NUMBER #</label>
+                            <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">ID NUMBER </label>
+                            <input type="password" name="subject" class="form-control" id="contact-subject" placeholder="Your ID Number" >
+                            <div class="validate"></div>
+                        </div>
+
+                        <div class="loading"></div>
+                        <div class="error-message"></div>
+                       
+
+                        <div class="form-send">
+                            <a href="~/Claimant/process"> have no account? open claim.</a>
+                            <button type="submit" class="btn btn-large">Submit</button>
+                        </div>
+                    }
+
+
+                </div></div></div>

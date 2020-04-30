@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Main Stylesheet File -->
+    <link href="@Url.Content("~/Content/claim/css/style.css")" rel="stylesheet" >
+    <!-- Google Fonts -->
+    <link href="@Url.Content("https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700")" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/claim/css/style.css")
+    @Styles.Render("~/Content/claim/font-awesome/css/font-awesome.min.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+           
+            <div class="navbar-collapse collapse">
+                <div id="section-topbar">
+                    <div id="topbar-inner">
+
+                        <div class="row">
+                            <div class="dropdown">
+                                <ul id="nav" class="nav">
+
+                                    <li><a href="/Claimant/process" title="Claim Process"><i class="fa fa-user"></i> <label>CLAIM PROCESS</label></a></li>
+                                    <li><a href="/Claimant/TrackProgress" title="Track Progress"><i class="fa fa-briefcase"></i><label>TRACK PROGRESS</label></a></li>
+                                    <li><a href="~/Claimant/CompleteForm" title="Submit Forms"><i class="fa fa-server"></i><label>COMPLETE FORM</label></a></li>
+                                </ul>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <hr />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

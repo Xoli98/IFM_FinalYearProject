@@ -1,0 +1,63 @@
+﻿@model fast_claims_v1._2.Models.ClaimApplicationModel
+
+@{
+    ViewBag.Title = "STEP 1: Claim Process";
+    Layout = "~/Views/Shared/_CLayout.cshtml";
+}
+
+<script type="text/javascript">
+    function checkExt() {
+        var ext =   document.getElementById('deathcertificate').value.split(".");
+        ext = ext[ext.length-1].toLowerCase();      
+        var arrayExtensions = ["jpg","jpeg", "png"];
+
+        if (arrayExtensions.lastIndexOf(ext) == -1) {
+            alert("Wrong extension type." + ext+".\n\nUpload images only.");
+            $("#deathcertificate").val("");
+    }
+
+    } 
+
+</script>
+    <div class="container">
+        <br /><br />
+        <div class="row">
+            <div class="col-lg-9">
+                <h2>CLAIM PROCESS</h2>
+                <p>In 2 easy steps you can be on your way to saving time and money by submitting and tracking a death claim conveniently from your desk.</p><hr />
+                <p>
+                    <h5> @ViewBag.Title </h5> <br />Select the <b>Submit A New Claim</b> click on <b>Submit</b> and complete the required information.
+                    <br />
+                </p>
+                
+                @using (Html.BeginForm("VerifyCustomer", "Claimant", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label>Your Email</label>
+
+                        
+                        @Html.TextBoxFor(e => e.email, new { @class = "form-control", type = "email", placeholder = "Your Email", id = "contact-email", name = "email" })
+
+                        <div class="validate">@Html.ValidationMessageFor(e => e.email)</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Death certificate</label>
+                        @Html.TextBoxFor(e => e.idnumber, new { @class = "form-control", type = "file", placeholder = "ID Number of the Deceased", id = "deathcertificate", name = "idnumber", onchange="checkExt()", accept="image/*" })
+                        <div class="validate">@Html.ValidationMessageFor(e => e.idnumber)</div>
+                    </div>
+
+                    <div class="loading"></div>
+                    <div class="form-group">
+                        <div class="error-message">@ViewBag.Error</div>
+                    </div>
+                    <div class="form-send">
+                        <a href="~/Claimant/TrackProgress"> already a beneficiary? track progress.</a>
+                        <button type="submit" class="btn btn-large">Submit</button>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+

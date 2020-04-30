@@ -1,0 +1,26 @@
+﻿@model fast_claims_v1._2.Models.ClaimApplicationModel
+
+@{
+    ViewBag.Title = "GivePin";
+    Layout = "~/Views/Shared/_CLayout.cshtml";
+}
+
+
+    <div class="container">
+        <h2>Email verification complete </h2>
+        <h4>You are few steps towards completing your application.</h4>
+        <hr />
+        <h4>Use this OTP and your email to track the progress of your application</h4><br />
+        <h1>OTP-PIN:<br /> <b>@Html.DisplayFor(e => e.OTP)</b></h1><br />
+        <h1>USERNAME:<br /><b>@Html.DisplayFor(e=>e.email)</b></h1>
+
+        @using(Html.BeginForm("TrackProgress", "Claimant", FormMethod.Get)){
+              <div class="form-send">
+                <button type="submit" class="btn btn-large">Track progress</button>
+               </div>
+        }
+    </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

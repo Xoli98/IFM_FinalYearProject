@@ -1,0 +1,728 @@
+﻿
+@{
+    ViewBag.Title = "Complete Form";
+    Layout = "~/Views/Shared/_CLayout.cshtml";
+
+
+
+}
+
+
+    <div class="row content-panel">
+        <div class="applicationform">
+
+
+
+            <div id="ITS_OAP" class="process" oncontextmenu="showCrumbsOnRC(); return false;">
+                <h1>Application for a death claim</h1>
+                <div id="breadCrumbs">
+                    <span class="bc_home">
+                        Quick Link:
+                    </span>
+                    <span>
+                        <a title="Web Application Process - Startup / POPI" href="javascript:void skipBackTo(1);">
+                            <img src="./Comprehensive Web Application Process_files/bc_home.jpg" id="home_img">
+                        </a>
+                    </span>
+                    <span class="bc_current" title="Web Application Process - Biographical">Particulars of the deceased</span>
+                </div>
+                <div id="progressBar" style="display:none; padding: 5px;">x</div>
+                <div id="genericErrorDiv" style="display:none; z-index:1001; padding-top:1em;">x</div>
+                <form method="post" name="frmOne" autocomplete="off" onsubmit="return changeToNameValuePairs(this);">
+                    <input type="hidden" name="process_code" id="process_code" value="ITS_OAP">
+                    <input type="hidden" name="page_code" id="page_code" value="ITS_OAP02">
+
+
+
+                    <section id="particulars">
+
+                        <h3>A. Particulars of the deaceased.</h3>
+                        <div id="oapPage02Note3Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+
+                            <div id="oapPage02Note3Fld" tag="oapPage02Note3" pgseq="89" style="text-align: left;  padding-left: 5px;">
+                                <script id="txtScript_20">oapPage02Note3_text();</script>.
+                            </div>
+                            <div id="oapPage02Note3GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapPage02Note3GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Name of the deceased:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Surname:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapGenderPrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Cause Of death:
+
+                            </div>
+                            <div id="oapGenderFld" tag="oapGender" pgseq="90" style="text-align: right; float: left;">
+                                <select onblur="" name="causeofdeath" mandatory="Y" id="oapGender" errordiv="oapGenderGrpErr">
+                                    <option value="" selected="selected">--- Please select ---</option>
+                                    <option value="1">Cardiovascular disease e.g. heart attack, heart failure</option>
+                                    <option value="2">Cerebrovascular disease e.g. stroke, aneurysm</option>
+                                    <option value="3">Cancer</option>
+                                    <option value="4">Respiratory disorder e.g. pneumonia</option>
+                                    <option value="5">Blood disorder e.g. septicaemia, anaemia</option>
+                                    <option value="6">Endocrine disorder e.g. diabetes, thyroid, pituitary glands, malnutrition</option>
+                                    <option value="7">Urinary disorder e.g. kidney failure</option>
+                                    <option value="8">Gastro intestinal disorder e.g. gall bladder, liver, stomach, pancreas, Crohns</option>
+                                    <option value="9">Central nervous system e.g. Parkinson’s, multiple sclerosis, epilepsy, motor neuron</option>
+                                    <option value="10">Motor vehicle accident</option>
+                                    <option value="11">Murder</option>
+                                    <option value="12">Other</option>
+                                </select>
+                                <input type="hidden" name="oapGender_desc" id="oapGender_desc" value="">
+
+                                <div id="JSText_21.999" style="position:absolute; visibility:hidden; z-index:1000;">callDynBGproc('web.ws01pkg.ws01valdata','&amp;x_type=G|iadsex&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_21.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                        </div>
+
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Name of doctor or person who certified the death:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter a last name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Telephone Number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter a last name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Fax:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter a fax.&nbsp;</div>
+                        </div>
+
+                        <div id="oapTitleGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapTitlePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Place of death:
+                            </div>
+                            <div id="oapTitleFld" tag="oapTitle" pgseq="110" style="text-align: right; float: left;">
+                                <select name="oapTitle" mandatory="Y" id="oapTitle" errordiv="oapTitleGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="H">Hospital</option>
+                                    <option value="DR">Clinic</option>
+                                    <option value="MISS">Home</option>
+                                    <option value="MR">Other</option>
+
+                                </select>
+                                <input type="hidden" name="oapTitle_desc" id="oapTitle_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapTitleGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapTitleGrpErrMsg" style="float: left; display: none;">Please select your place of death.&nbsp;</div>
+                        </div>
+
+
+                    </section>
+
+                    <br>
+                    <hr>
+                    <br>
+
+                    <section id="undertaker">
+                        <h3>B. Details of the undertaker.</h3>
+                        <div id="oapPage02Note3Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapPage02Note3Fld" tag="oapPage02Note3" pgseq="89" style="text-align: left;  padding-left: 5px;">
+                                <script id="txtScript_20">oapPage02Note3_text();</script>.
+                            </div>
+                            <div id="oapPage02Note3GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapPage02Note3GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Company Name:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Undertaker Company Number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter company number.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Contact person:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter company number.&nbsp;</div>
+                        </div>
+
+
+                        <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                            Business postal address:
+                        </div>
+                        <div id="oapStreetAddr1Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapStreetAddr1Prompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Street name:
+                            </div>
+                            <div id="oapStreetAddr1Fld" tag="oapStreetAddr1" tag_code_cpy="itsAddr" pgseq="200" style="text-align: right; float: left;">
+                                <input type="text" name="oapStreetAddr1" maxlength="80" size="60" dojs="onchange" mandatory="Y" onchange="eventRun(45.6,this)" id="oapStreetAddr1" errordiv="oapStreetAddr1GrpErr">
+                                <div id="JSText_45.6" style="position:absolute; visibility:hidden; z-index:1000;">ctl.value = ctl.value.toUpperCase();</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapStreetAddr1GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapStreetAddr1GrpErrMsg" style="float: left; display: none;">Please enter the first address line.&nbsp;</div>
+                        </div>
+
+
+                        <div id="oapStreetAddr2Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapStreetAddr2Prompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                P.O. BOX :
+                            </div>
+                            <div id="oapStreetAddr2Fld" tag="oapStreetAddr2" tag_code_cpy="itsAddr" pgseq="210" style="text-align: right; float: left;">
+                                <input type="number" name="oapStreetAddr2" maxlength="80" size="60" dojs="onchange" mandatory="Y" onchange="eventRun(46.6,this)" id="oapStreetAddr2" errordiv="oapStreetAddr2GrpErr">
+                                <div id="JSText_46.6" style="position:absolute; visibility:hidden; z-index:1000;">ctl.value = ctl.value.toUpperCase();</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapStreetAddr2GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapStreetAddr2GrpErrMsg" style="float: left; display: none;">Please enter the second address line.&nbsp;</div>
+                        </div>
+                        <div id="oapStreetAddr4Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapStreetAddr4Prompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Province name:
+                            </div>
+                            <div id="oapStreetAddr4Fld" tag="oapStreetAddr4" tag_code_cpy="itsAddr" pgseq="230" style="text-align: right; float: left;">
+                                <input type="text" name="oapStreetAddr4" maxlength="80" size="60" dojs="onchange" onchange="eventRun(48.4,this)" id="oapStreetAddr4" errordiv="oapStreetAddr4GrpErr">
+                                <div id="JSText_48.4" style="position:absolute; visibility:hidden; z-index:1000;">ctl.value = ctl.value.toUpperCase();</div>
+                            </div>
+                            <div id="oapStreetAddr4GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapStreetAddr4GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                        </div>
+                        <div id="oapStreetAddrPCodeRqGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapStreetAddrPCodeRqPrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Postal Code:
+                            </div>
+                            <div id="oapStreetAddrPCodeRqFld" tag="oapStreetAddrPCodeRq" pgseq="246" style="text-align: right; float: left;">
+
+                                <input type="text" name="oapStreetAddrPCodeRq_desc" value="" onblur="" dojs="onchange" mandatory="Y" maxlength="8" onchange="eventRun(49.5,this)" id="oapStreetAddrPCodeRq_desc" errordiv="oapStreetAddrPCodeRqGrpErr">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapStreetAddrPCodeRqGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapStreetAddrPCodeRqGrpErrMsg" style="float: left; display: none;">You must enter a postal code.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Telephone Number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter a last name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Fax:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter a fax.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Place of burial:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapBirthdateGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapBirthdatePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Date of burial (DD-MON-YYYY):
+                            </div>
+                            <div id="oapBirthdateFld" tag="oapBirthdate" pgseq="105" style="text-align: right; float: left;">
+                                <input type="text" name="oapBirthdate" onblur="eventRun(22.999,this)" mandatory="Y" maxlength="11" size="12" id="oapBirthdate" errordiv="oapBirthdateGrpErr">
+                                <a href="https://registration.uj.ac.za/pls/prodi41/gen.gw1pkg.gw1proc#" id="oapBirthdateCal" onclick="return showCalendar(document.frmOne.oapBirthdate);">
+                                    <img src="./Comprehensive Web Application Process_files/calendar.gif">
+                                </a>
+                                <div id="JSText_22.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapBirthdateGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapBirthdateGrpErrMsg" style="float: left; display: none;">Please enter your birthdate.&nbsp;</div>
+                        </div>
+                    </section>
+                    <br>
+                    <hr>
+                    <br>
+                    <section id="financial planning">
+                        <h3>C. Bank Account Particulars.</h3>
+
+                        <div id="oapPage02Note3Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+
+                            <div id="oapPage02Note3Fld" tag="oapPage02Note3" pgseq="89" style="text-align: left;  padding-left: 5px;">
+                                <script id="txtScript_20">oapPage02Note3_text();</script>.
+                            </div>
+                            <div id="oapPage02Note3GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapPage02Note3GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                        </div>
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                Did you know that you can re-invest the money if you are not ready to make a final decision yet?
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                If you do not have an adviser or broker assisting you, would you like someone to contact you to assist Yes No
+                                you with your financial planning?
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                Are you considering a re-investment?
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+                        <br /><br />
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Account Holder
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="1">Planholder</option>
+                                    <option value="2">Beneficiary</option>
+                                    <option value="3">Estate</option>
+                                    <option value="4">Cessionary(e.g legal guardian)/option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+                        <br>
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Registered Name:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Trade Name:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Registered Number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+                        <br>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Account holder full name :
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Surname:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapBirthdateGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapBirthdatePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Date of birth (DD-MON-YYYY):
+                            </div>
+                            <div id="oapBirthdateFld" tag="oapBirthdate" pgseq="105" style="text-align: right; float: left;">
+                                <input type="text" name="oapBirthdate" onblur="eventRun(22.999,this)" mandatory="Y" maxlength="11" size="12" id="oapBirthdate" errordiv="oapBirthdateGrpErr">
+                                <a href="https://registration.uj.ac.za/pls/prodi41/gen.gw1pkg.gw1proc#" id="oapBirthdateCal" onclick="return showCalendar(document.frmOne.oapBirthdate);">
+                                    <img src="./Comprehensive Web Application Process_files/calendar.gif">
+                                </a>
+                                <div id="JSText_22.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapBirthdateGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapBirthdateGrpErrMsg" style="float: left; display: none;">Please enter your birthdate.&nbsp;</div>
+                        </div>
+
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Gender:
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Relation to deaceased:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Citizenship:
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="M">South African</option>
+                                    <option value="F">SADC</option>
+                                    <option value="F">Other</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Income tax number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="number" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Name of bank:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Name of branch:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Account number:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+                        <div id="oapSurnameGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Branch code:
+                            </div>
+                            <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;">if (ctl.value != '') callDynBGproc('web.ws29pkg.ws29valdata','&amp;x_type=CHARTEST&amp;x_name='+ctl.name+'&amp;x_value='+ctl.value,'JSText_28.888');</div>
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                        </div>
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Account type:
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="M">Savings</option>
+                                    <option value="F">Cheque</option>
+                                    <option value="F">Transmission</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                Attach valid proof of account
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <input type="file" name="oapCitizenType" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+
+                    </section>
+
+                    <br>
+                    <hr>
+                    <br>
+
+                    <section id="declaration">
+                        <h3>D. Declaration.</h3>
+
+                        <div id="oapPage02Note3Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+
+                            <div id="oapPage02Note3Fld" tag="oapPage02Note3" pgseq="89" style="text-align: left;  padding-left: 5px;">
+                                <script id="txtScript_20">oapPage02Note3_text();</script>.
+                            </div>
+                            <div id="oapPage02Note3GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapPage02Note3GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                        </div>
+
+                        <h4>I declare that</h4>
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                I have completed this document or someone has completed it for me with my approval.
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                I understand the information in this document.
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+                        <div id="oapCitizenTypeGrp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                            <div id="oapCitizenTypePrompt" style="text-align: right; display: inline-block; float: left; width: 350px; padding-right: 5px;">
+                                The information in this document is correct.
+                            </div>
+                            <div id="oapCitizenTypeFld" tag="oapCitizenType" pgseq="10" style="text-align: right; float: left;">
+                                <select name="oapCitizenType" dojs="onchange" mandatory="Y" onchange="eventRun(6.4,this)" id="oapCitizenType" errordiv="oapCitizenTypeGrpErr">
+                                    <option value="-1" selected="selected">--- Please select ---</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <input type="hidden" name="oapCitizenType_desc" id="oapCitizenType_desc" value="">
+                            </div>
+                            <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                            <div id="oapCitizenTypeGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                            <div id="oapCitizenTypeGrpErrMsg" style="float: left; display: none;">Please indicate your citizenship.&nbsp;</div>
+                        </div>
+                    </section>
+
+
+                    <div id="oapBackBtn2Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                        <div id="oapBackBtn2Prompt" style="text-align: right; float: left; padding-right: 5px;">
+                            <script id="promptScript_85">oapBackBtn2_prmt();</script>&nbsp;
+                        </div>
+                        <div id="oapBackBtn2Fld" tag="oapBackBtn2" pgseq="900" style="text-align: right; float: left;">
+                            <input type="submit" value="save draft" doback="Y" dosubmit="N" position="S" id="oapBackBtn2" errordiv="oapBackBtn2GrpErr" redirect_type="P" redirect_value="ITS_OAP_START" onclick="setRedirectTo(this);">
+                        </div>
+                        <div id="oapNextBtn2Prompt" style="text-align: right; float: left; padding-right: 5px;">
+                            <script id="promptScript_86">oapNextBtn2_prmt();</script>&nbsp;
+                        </div>
+                        <div id="oapNextBtn2Fld" tag="oapNextBtn2" pgseq="910" style="text-align: right; float: left;">
+                            <input type="submit" value="submit" checkmandatory="N" continue="Y" position="E" id="oapNextBtn2" errordiv="oapBackBtn2GrpErr" redirect_type="D" redirect_value="web.ws29pkg.ws29_setup_wap02_1;" onclick="setRedirectTo(this);">
+                        </div>
+                        <div id="oapBackBtn2GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                        <div id="oapBackBtn2GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

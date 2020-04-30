@@ -1,0 +1,38 @@
+﻿@model fast_claims_v1._2.Models.admin.ViewClaimApplicationModel
+@{
+
+    ViewBag.Title = "ViewApplication";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+
+
+<h2>ViewApplication</h2>
+
+<div class="row">
+    <div class="col-md-9">
+        <h3>Death certificate </h3>
+            <embed src="@Url.Action("DisplayPDF","Admin",new { fileId= Model.deathcertificate })" width="700" height="400" />
+            <hr />
+
+            <h3>ID Document </h3>
+            <embed src="@Url.Action("DisplayPDF","Admin",new {fileId= Model.iddocument })" width="700" height="400" />
+    
+    </div>
+
+    <div class="col-md-3">
+        <form>
+            <input type="text" placeholder="" />
+            @Html.ActionLink("edit", "Display", 1, new { @class="btn btn-success"})
+
+        </form>
+        <p>corpus luetium</p>
+    </div>
+
+</div>
+<div>
+    <hr />
+    <button class="btn btn-success"> Save</button>
+    <button class="btn btn-outline-danger"> Save</button>
+</div>
+

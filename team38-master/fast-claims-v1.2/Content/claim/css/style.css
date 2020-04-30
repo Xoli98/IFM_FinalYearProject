@@ -1,0 +1,668 @@
+
+body {
+  background-color: white;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 12px;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+  font-weight: 300;
+ 
+}
+
+/* Paragraph & Typographic */
+
+p {
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Links */
+
+a {
+  color: #1abc9c;
+  word-wrap: break-word;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover, a:focus {
+  color: #44bbaa;
+  text-decoration: none;
+  outline: 0;
+}
+
+a:before, a:after {
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*---------------------------------------------------
+3.1 Topbar
+---------------------------------------------------*/
+
+#section-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+  font: normal 16px/24px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#section-topbar a {
+  color: #fff;
+}
+
+#topbar-inner {
+  background: #5272AF;
+  line-height: 0;
+  text-align: center;
+}
+
+/*
+Top Bar
+
+By default, top navigation bar uses "fixed" position
+*/
+
+#section-topbar ul#nav {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #222;
+  /* For IE, the outcast */
+  zoom: 1;
+  *display: inline;
+}
+
+#section-topbar ul#nav>li {
+  display: block;
+  float: left;
+  padding: 0;
+}
+
+/** Application form */
+.applicationform {
+    background-color: transparent;
+    background-repeat: repeat;
+    background-image: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+
+    .applicationform .framebody {
+        background-color: #FFFFFF;
+        background-image: none;
+        font-size: 9pt;
+    }
+
+.applicationform img {
+    border: 0;
+}
+
+.applicationform h1 {
+    color: #5272AF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: normal;
+    margin-top: 0px;
+    text-decoration: none;
+    text-transform: none;
+    word-spacing: normal;
+}
+
+.applicationform h2 {
+    color: #5272AF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: normal;
+    margin: 7px 0px 2px;
+    text-decoration: none;
+    text-transform: none;
+    word-spacing: normal;
+}
+
+.applicationform h3 {
+    color: #5272AF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    margin: 7px 0px 2px;
+    text-decoration: none;
+    text-transform: none;
+    word-spacing: normal;
+    padding-top: 1em;
+}
+
+.applicationform h4 {
+    color: #5272AF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: 200;
+    letter-spacing: normal;
+    margin: 7px 0px 2px;
+    text-decoration: none;
+    text-transform: none;
+    word-spacing: normal;
+    padding-top: 1em;
+}
+
+.applicationform table.mi_userdet {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    background-color: #ECE9D8;
+}
+
+.applicationform div, label {
+    font-size: 9pt;
+}
+
+/* This is used for reporting errors on insert/update/delete screens */
+.applicationform .ErrorDiv {
+    margin-left: 5px;
+}
+
+/* This class is added by default to the process div included on all pages */
+.applicationform div.process {
+    border-style: solid;
+    border-color: #EDEDED;
+    border-width: 5px;
+    border-top: 20px solid #EDEDED;
+    border-bottom: 10px solid #EDEDED;
+    width: 80%;
+    padding-left: 5px;
+}
+
+/* Class linked to home image for quick links */
+/* F182381 Fix deprecated align style */
+    .applicationform #home_img {
+        float: left;
+    }
+
+    .applicationform .bc_home {
+        font-weight: bold;
+    }
+
+    .applicationform .bc_current {
+        color: #C0C0C0;
+    }
+
+/* Override itscustom.css for document loading */
+    .applicationform .rowover {
+        background-color: #EDEDED;
+    }
+
+    .applicationform tr.rlheader {
+        background-color: #EDEDED;
+    }
+
+/* T172812 Override itscustom.css for e-payment */
+    .applicationform td.datahdr {
+        text-align: right;
+        float: left;
+        width: 125px;
+    }
+
+/* Breadcrumb Style Definition */
+    .applicationform #breadCrumbs {
+        background-image: url('/itsimages/bc_bg.jpg');
+        background-repeat: repeat-x;
+        background-color: #E6E6E6;
+        height: 20px;
+        font: 10px Arial, Helvetica, sans-serif;
+        line-height: 20px;
+        color: #888;
+        border: solid 1px #cacaca;
+        width: 100%;
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .applicationform #breadCrumbs span {
+            list-style-type: none;
+            padding-left: 10px;
+            display: inline-block;
+            float: left;
+        }
+
+        .applicationform #breadCrumbs a {
+            display: inline-block;
+            background-image: url('/itsimages/bc_separator.png');
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-top: 3px;
+            padding-right: 15px;
+            text-decoration: none;
+            color: #333333;
+            outline: none;
+            font: 10px Arial, Helvetica, sans-serif;
+        }
+
+    .applicationform #crumbsPopUp {
+        background-color: #E6E6E6;
+    }
+
+        .applicationform #crumbsPopUp span {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .applicationform #crumbsPopUp a {
+            background-image: url('/itsimages/bc_separator.png');
+            background-repeat: no-repeat;
+            background-position: left;
+            padding-top: 3px;
+            padding-left: 15px;
+            text-decoration: none;
+            color: #333333;
+            outline: none;
+            font: 10px Arial, Helvetica, sans-serif;
+        }
+
+        .applicationform #crumbsPopUp br {
+            height: 0px;
+        }
+
+/* Picking list Style Definition */
+    .applicationform fieldset.pickinglist {
+        clear: both;
+        width: auto;
+        padding-bottom: 1em;
+        padding-left: 5px;
+        border: 1px solid #BFBAB0;
+    }
+
+        .applicationform fieldset.pickinglist legend {
+            margin-left: 1em;
+            padding: 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .applicationform fieldset.pickinglist table {
+            margin: 0 1em 0 1em;
+        }
+
+        .applicationform fieldset.pickinglist th {
+            font-weight: bold;
+            background: #E3DEB4;
+            background-image: url('/itsimages/bc_bg.jpg');
+            background-repeat: repeat;
+            padding-left: 5px;
+            font-size: 9pt;
+        }
+
+        .applicationform fieldset.pickinglist td {
+            padding-left: 5px;
+            background: #FFE8EF;
+            font-size: 9pt;
+        }
+
+/* Wizard data display style Definition */
+/* F182381 add text-align for IE display */
+/* 194310 Standardise fieldset display */
+    .applicationform fieldset.wizarddisplay {
+        clear: both;
+        width: 725px;
+        border: 1px solid #BFBAB0;
+        text-align: left;
+    }
+
+        .applicationform fieldset.wizarddisplay div {
+            color: gray;
+        }
+
+        .applicationform fieldset.wizarddisplay legend {
+            margin-left: 1em;
+            padding: 0;
+            color: #0645AD;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .applicationform fieldset.wizarddisplay table {
+            font-weight: normal;
+            font-size: 9pt;
+        }
+
+        .applicationform fieldset.wizarddisplay th {
+            background-color: #F2F2F2;
+            border: 1px solid #BFBAB0;
+        }
+
+        .applicationform fieldset.wizarddisplay tr {
+            color: gray;
+        }
+
+/* Wizard fieldset display style Definition (202836)*/
+    .applicationform fieldset.wizardstd {
+        clear: both;
+        width: 725px;
+        border: 1px solid #BFBAB0;
+    }
+
+        .applicationform fieldset.wizardstd legend {
+            margin-left: 1em;
+            padding-top: 5px;
+            color: #0645AD;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+    .applicationform tr.oddRow {
+        background-color: #D5EFFE;
+    }
+
+    .applicationform tr.evenRow {
+        background-color: #ECECEC;
+    }
+
+/* LOV Style Definition */
+    .applicationform #listOfValues {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0px;
+    }
+
+        .applicationform #listOfValues table {
+            background-color: #E6E6E6;
+            border: 1px solid #BFBAB0;
+            font-size: 12px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .applicationform #listOfValues input {
+            margin: 5px;
+        }
+
+        .applicationform #listOfValues p {
+            font-size: 12px;
+            margin: 5px;
+        }
+
+    .applicationform #lovHelp {
+        background-color: #E6E6E6;
+        border: 1px solid #BFBAB0;
+        font-size: 12px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+/* Wizard generic error */
+    .applicationform #genericErrorDiv {
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .applicationform .ErrorDiv {
+        color: red;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .applicationform .mandatory_fld {
+        color: red;
+        font-weight: bold;
+        font-size: 10pt;
+    }
+
+/* Hiding Skype numbers */
+    @media screen {
+        span .skype_pnh_print_container {
+        display: inline !important;
+    }
+
+        .applicationform span.skype_pnh_container {
+            display: none !important;
+        }
+}
+
+.applicationform span.skype_pnh_mark {
+    display: inline !important;
+}
+
+/* Record list styles */
+.applicationform table.mrtbl {
+    color: #000000;
+    font-family: Geneva,Helvetica,Arial,Verdana,sans-serif;
+    font-size: 12px;
+    border: 1px solid gray;
+}
+
+.applicationform  tr.mrhead th {
+    background-color: #EDEDED;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.applicationform tr.mrchar td {
+    text-align: left;
+}
+
+.applicationform tr.mrnbr td {
+    text-align: right;
+}
+
+/* Check box labels (202836)*/
+.applicationform .chkBoxLbl {
+    text-align: justify;
+    width: 500px;
+    padding-left: 5px;
+    vertical-align: top;
+}
+
+/* Clear LOV HREF anchor (202836)*/
+.applicationform a.clearlov {
+    font-size: 10pt;
+    padding-left: 5px;
+    font-family: Verdana, Arial, Helvetica, sans-serif
+}
+
+    .applicationform a.clearlov:hover {
+        font-weight: 800;
+    }
+
+    .applicationform a.clearlov:link {
+        color: #5272af;
+    }
+
+    .applicationform a.clearlov:visited {
+        color: #5272af;
+    }
+
+
+/** Application form  end*/
+#section-topbar ul#nav a {
+  display: block;
+  font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  padding: 18px 20px 18px 20px;
+  border-left: 1px solid #222;
+}
+
+#section-topbar ul#nav a:focus {
+  background: #111;
+  text-decoration: none;
+  border-left: 1px solid #111;
+}
+
+    #section-topbar ul#nav a:hover {
+        background: #0094ff;
+        text-decoration: none;
+        border-left: 1px solid #111;
+    }
+
+#section-topbar ul#nav .active a {
+  background: #44bbaa;
+  border-left: 1px solid #111;
+}
+
+    #section-topbar ul#nav .active a:hover {
+        background: #18f2b8;
+    }
+
+#section-topbar i {
+  font-size: 25px;
+}
+
+/*---------------------------------------------------
+SECTION WRAPS
+---------------------------------------------------*/
+
+/* Header Wrap */
+
+#headerwrap {
+  background: url(../img/people.jpg) no-repeat center top;
+  margin-top: 30px;
+  padding-top: 40px;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 120px;
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#headerwrap h1 {
+  font-size: 80px;
+  color: black;
+}
+
+#headerwrap h3 {
+  font-size: 20px;
+  color: black;
+}
+
+/* Intnro Wrap */
+
+#footwrap {
+  background: #2f2f2f;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#footwrap p {
+  color: white;
+}
+
+#footwrap h5 {
+  color: white;
+}
+
+#footwrap t {
+  font-weight: 700;
+}
+
+#footwrap i {
+  padding-right: 8px;
+  color: #1abc9c;
+}
+
+
+/* Global Values */
+
+.desc {
+  padding-top: 50px;
+}
+
+.desc p {
+  color: #2f2f2f;
+}
+
+.desc t {
+  color: #34495e;
+  font-weight: 700;
+}
+
+.desc imp {
+  padding: 6px;
+  color: white;
+  background: #34495e;
+}
+
+.desc more {
+  color: #95a5a6;
+}
+
+sm {
+  font-size: 12px;
+}
+
+/* Contact Form */
+
+
+
+
+@-webkit-keyframes animate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

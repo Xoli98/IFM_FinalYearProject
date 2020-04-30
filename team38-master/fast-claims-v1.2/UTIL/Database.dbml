@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="fastclaims-v1.2" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=fastclaims-v1.2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="fastclaims_v1_2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_admin" Member="tbl_admins">
+    <Type Name="tbl_admin">
+      <Column Name="admin_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_admin_tbl_application" Member="tbl_applications" ThisKey="admin_id" OtherKey="admin_id" Type="tbl_application" />
+      <Association Name="tbl_login_tbl_admin" Member="tbl_login" ThisKey="login_id" OtherKey="login_id" Type="tbl_login" IsForeignKey="true" />
+      <Association Name="tbl_user_tbl_admin" Member="tbl_user" ThisKey="user_id" OtherKey="user_id" Type="tbl_user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_application" Member="tbl_applications">
+    <Type Name="tbl_application">
+      <Column Name="appl_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="admin_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_application_tbl_claimapplication" Member="tbl_claimapplications" ThisKey="appl_id" OtherKey="appl_id" Type="tbl_claimapplication" />
+      <Association Name="tbl_admin_tbl_application" Member="tbl_admin" ThisKey="admin_id" OtherKey="admin_id" Type="tbl_admin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_claimant" Member="tbl_claimants">
+    <Type Name="tbl_claimant">
+      <Column Name="claimaint_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="iddocument" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_file_tbl_claimant" Member="tbl_file" ThisKey="iddocument" OtherKey="fileId" Type="tbl_file" IsForeignKey="true" />
+      <Association Name="tbl_login_tbl_claimant" Member="tbl_login" ThisKey="login_id" OtherKey="login_id" Type="tbl_login" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_claimapplications" Member="tbl_claimapplications">
+    <Type Name="tbl_claimapplication">
+      <Column Name="appl_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="deceased_id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="claimant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="claim_number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="deceaced_deathcert" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_application_tbl_claimapplication" Member="tbl_application" ThisKey="appl_id" OtherKey="appl_id" Type="tbl_application" IsForeignKey="true" />
+      <Association Name="tbl_file_tbl_claimapplication" Member="tbl_file" ThisKey="deceaced_deathcert" OtherKey="fileId" Type="tbl_file" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_file" Member="tbl_files">
+    <Type Name="tbl_file">
+      <Column Name="fileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[file]" Member="file" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="tbl_file_tbl_claimant" Member="tbl_claimants" ThisKey="fileId" OtherKey="iddocument" Type="tbl_claimant" />
+      <Association Name="tbl_file_tbl_claimapplication" Member="tbl_claimapplications" ThisKey="fileId" OtherKey="deceaced_deathcert" Type="tbl_claimapplication" />
+      <Association Name="tbl_file_tbl_policyholder" Member="tbl_policyholders" ThisKey="fileId" OtherKey="iddocument" Type="tbl_policyholder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_login" Member="tbl_logins">
+    <Type Name="tbl_login">
+      <Column Name="login_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_login_tbl_admin" Member="tbl_admins" ThisKey="login_id" OtherKey="login_id" Type="tbl_admin" />
+      <Association Name="tbl_login_tbl_claimant" Member="tbl_claimants" ThisKey="login_id" OtherKey="login_id" Type="tbl_claimant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_policyholder" Member="tbl_policyholders">
+    <Type Name="tbl_policyholder">
+      <Column Name="holder_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="login_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iddocument" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_file_tbl_policyholder" Member="tbl_file" ThisKey="iddocument" OtherKey="fileId" Type="tbl_file" IsForeignKey="true" />
+      <Association Name="tbl_user_tbl_policyholder" Member="tbl_user" ThisKey="user_id" OtherKey="user_id" Type="tbl_user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_user" Member="tbl_users">
+    <Type Name="tbl_user">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Association Name="tbl_user_tbl_admin" Member="tbl_admins" ThisKey="user_id" OtherKey="user_id" Type="tbl_admin" />
+      <Association Name="tbl_user_tbl_policyholder" Member="tbl_policyholders" ThisKey="user_id" OtherKey="user_id" Type="tbl_policyholder" />
+    </Type>
+  </Table>
+</Database>

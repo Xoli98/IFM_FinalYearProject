@@ -1,0 +1,77 @@
+﻿CREATE TABLE [dbo].[tbl_admin] (
+    [admin_id] INT IDENTITY (1, 1) NOT NULL,
+    [login_id] INT NOT NULL,
+    [user_id]  INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([admin_id] ASC),
+    CONSTRAINT [FK_tbl_admin_tbl_login] FOREIGN KEY ([login_id]) REFERENCES [dbo].[tbl_login] ([login_id]),
+    CONSTRAINT [FK_tbl_admin_tbl_user] FOREIGN KEY ([user_id]) REFERENCES [dbo].[tbl_user] ([user_id])
+);
+
+CREATE TABLE [dbo].[tbl_application] (
+    [appl_id]      INT  IDENTITY (1, 1) NOT NULL,
+    [date_created] DATE NOT NULL,
+    [isActive]     BIT  NOT NULL,
+    [admin_id]     INT  NOT NULL,
+    PRIMARY KEY CLUSTERED ([appl_id] ASC),
+    UNIQUE NONCLUSTERED ([appl_id] ASC),
+    CONSTRAINT [FK_tbl_application_tbl_admin] FOREIGN KEY ([admin_id]) REFERENCES [dbo].[tbl_admin] ([admin_id])
+);
+
+CREATE TABLE [dbo].[tbl_claimant] (
+    [claimaint_id] INT           IDENTITY (1, 1) NOT NULL,
+    [login_id]     INT           NOT NULL,
+    [email]        VARCHAR (254) NOT NULL,
+    [iddocument]   INT           NULL,
+    PRIMARY KEY CLUSTERED ([claimaint_id] ASC),
+    UNIQUE NONCLUSTERED ([login_id] ASC),
+    CONSTRAINT [FK_tbl_claimant_tbl_login] FOREIGN KEY ([login_id]) REFERENCES [dbo].[tbl_login] ([login_id]),
+    CONSTRAINT [FK_tbl_claimant_ToTable] FOREIGN KEY ([iddocument]) REFERENCES [dbo].[tbl_file] ([fileId])
+);
+
+CREATE TABLE [dbo].[tbl_claimapplications] (
+    [appl_id]            INT          NOT NULL,
+    [deceased_id]        VARCHAR (14) NOT NULL,
+    [claimant_id]        INT          NOT NULL,
+    [claim_number]       INT          IDENTITY (1, 1) NOT NULL,
+    [deceaced_deathcert] INT          NULL,
+    PRIMARY KEY CLUSTERED ([claim_number] ASC),
+    UNIQUE NONCLUSTERED ([claim_number] ASC),
+    UNIQUE NONCLUSTERED ([deceased_id] ASC),
+    UNIQUE NONCLUSTERED ([claimant_id] ASC),
+    CONSTRAINT [FK_tbl_claimapplications_tbl_applications] FOREIGN KEY ([appl_id]) REFERENCES [dbo].[tbl_application] ([appl_id]),
+    CONSTRAINT [FK_tbl_claimapplications_ToTable] FOREIGN KEY ([deceaced_deathcert]) REFERENCES [dbo].[tbl_file] ([fileId])
+);
+CREATE TABLE [dbo].[tbl_file] (
+    [fileId] INT             IDENTITY (1, 1) NOT NULL,
+    [name]   VARCHAR (20)    NOT NULL,
+    [file]   VARBINARY (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([fileId] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_login] (
+    [login_id] INT          IDENTITY (1, 1) NOT NULL,
+    [username] VARCHAR (20) NOT NULL,
+    [password] VARCHAR (8)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([login_id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_policyholder] (
+    [holder_id]  INT IDENTITY (1, 1) NOT NULL,
+    [user_id]    INT NOT NULL,
+    [login_id]   INT NOT NULL,
+    [id_number]  INT NOT NULL,
+    [iddocument] INT NULL,
+    PRIMARY KEY CLUSTERED ([holder_id] ASC),
+    CONSTRAINT [FK_tbl_policyholder_tbl_user] FOREIGN KEY ([user_id]) REFERENCES [dbo].[tbl_user] ([user_id]),
+    CONSTRAINT [FK_tbl_policyholder_ToTable] FOREIGN KEY ([iddocument]) REFERENCES [dbo].[tbl_file] ([fileId])
+);
+
+CREATE TABLE [dbo].[tbl_user] (
+    [user_id]   INT           IDENTITY (1, 1) NOT NULL,
+    [firstname] VARCHAR (20)  NOT NULL,
+    [lastname]  VARCHAR (20)  NOT NULL,
+    [email]     VARCHAR (254) NULL,
+    PRIMARY KEY CLUSTERED ([user_id] ASC)
+);
+
+

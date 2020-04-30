@@ -1,0 +1,50 @@
+﻿@model fast_claims_v1._2.Models.UploadIDModel
+
+@{
+    ViewBag.Title = "UploadID";
+    Layout = "~/Views/Shared/_CLayout.cshtml";
+}
+
+<h3>STEP 1 </h3>
+
+<p>Youre one step closer to finishing your application.</p><hr />
+<div class="container">
+
+    @using (Html.BeginForm("ProcessId","Claimant",FormMethod.Post,new { enctype="multipart/form-data"})) {
+        <div class="form-group">
+            <label > The deceased certified Death certificate </label>
+            <input accept="application/pdf" required type="file" id="deathcertificate" name="deathcertificate" class="form-control" onchange="checkExt(this.value,this.id)"/>
+      
+            <div class="error-message" id="errormsg"></div>
+            <br />
+        </div>
+        
+        <div class="form-group">
+            <label>Your certified ID Document </label>
+            <br />
+            <input required type="file" id="iddocument" name="iddocument" class="form-control" onchange="checkExt(this.value, this.id)" />
+            <br />
+        </div>
+        <div class="form-group">
+            <p>@ViewBag.Error</p>
+            <input type="submit" value="submit" />
+            <br />
+        </div>
+    }
+
+    <script>
+    function checkExt(file,str) {
+        var ext = file.split(".");
+        ext = ext[ext.length-1].toLowerCase();      
+        var arrayExtensions = ["pdf"];
+
+        if (arrayExtensions.lastIndexOf(ext) == -1) {
+            alert("Wrong extension type." + ext);
+            $("#"+str).val("");
+    }
+
+    }
+
+    </script>
+</div>
+

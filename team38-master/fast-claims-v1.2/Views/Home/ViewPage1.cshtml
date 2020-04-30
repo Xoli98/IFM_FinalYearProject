@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title></title>
+        <title>Ack death</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="~/Views/Home/wizard.css">
+    </head>
+    <body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+        <div id="ITS_OAP" class="process" oncontextmenu="showCrumbsOnRC(); return false;">
+            <h1>Pic</h1>
+            <div id="breadCrumbs">
+                <span class="bc_home">
+                    Quick Link:
+                </span>
+                <span>
+                    <a title="Web Application Process - Startup / POPI" href="javascript:void skipBackTo(1);">
+                        <img src="./Comprehensive Web Application Process_files/bc_home.jpg" id="home_img">
+                    </a>
+                </span>
+                <span class="bc_current" title="Web Application Process - Biographical">Particulars of the deceased</span>
+            </div>
+            <div id="progressBar" style="display:none; padding: 5px;">x</div>
+            <div id="genericErrorDiv" style="display:none; z-index:1001; padding-top:1em;">x</div>
+            <form method="post" name="frmOne" autocomplete="off" onsubmit="return changeToNameValuePairs(this);">
+               
+                <section id="particulars" align ="centre">
+
+                    <h3>A. Particulars of the deaceased.</h3>
+
+                    <div class="workstat" align="center">
+
+                        <div id="section-row" style="text-align: right; display: inline-block;  width: 100%; padding-right: 5px;">
+                            <div id="section_right" style="text-align: right; float: left;">
+                                <img src="./Comprehensive Web Application Process_files/certificate.jpg" height="400" width="400" />
+
+                            </div>
+                            <div id="section_left" style="text-align: right; float: right;">
+                                <div id="section" style=" display: inline-block; padding-top:5px; width:100%;">
+                                    <div id="oapSurnamePrompt" style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                        Name of the deceased:
+                                    </div>
+                                    <div id="oapSurnameFld" tag="oapSurname" pgseq="120" style="text-align: right; float: left;">
+                                        <input type="text" name="oapSurname" onblur="eventRun(28.999,this)" mandatory="Y" maxlength="30" size="31" id="oapSurname" errordiv="oapSurnameGrpErr">
+                                        <div id="JSText_28.999" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+                                    </div>
+                                    <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                                    <div id="oapSurnameGrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                                    <div id="oapSurnameGrpErrMsg" style="float: left; display: none;">Please enter name.&nbsp;</div>
+                                </div>
+
+                                <div style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                                    <div style="text-align: right; display: inline-block; float: left; width: 250px; padding-right: 5px;">
+                                        Cause Of death:
+
+                                    </div>
+                                    <div style="text-align: right; float: left;">
+                                        <select onblur="" name="causeofdeath" mandatory="Y" id="oapGender" errordiv="oapGenderGrpErr">
+                                            <option value="" selected="selected">--- Please select ---</option>
+                                            <option value="1">Cardiovascular disease e.g. heart attack, heart failure</option>
+                                            <option value="2">Cerebrovascular disease e.g. stroke, aneurysm</option>
+                                            <option value="3">Cancer</option>
+                                            <option value="4">Respiratory disorder e.g. pneumonia</option>
+                                            <option value="5">Blood disorder e.g. septicaemia, anaemia</option>
+                                        </select>
+                                        <input type="hidden" name="oapGender_desc" id="oapGender_desc" value="">
+
+                                        
+                                    </div>
+                                    <font class="mandatory_fld" style="float: left;">&nbsp;*&nbsp;</font>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+             
+             
+              
+
+
+              
+
+
+                <br>
+                <hr>
+                <br>
+
+                <div id="oapBackBtn2Grp" style="clear: both; display: inline-block; padding-top:5px; width:100%;">
+                    <div id="oapBackBtn2Prompt" style="text-align: right; float: left; padding-right: 5px;">
+                        <script id="promptScript_85">oapBackBtn2_prmt();</script>&nbsp;
+                    </div>
+                    <div id="oapBackBtn2Fld" tag="oapBackBtn2" pgseq="900" style="text-align: right; float: left;">
+                        <input type="submit" value="save draft" doback="Y" dosubmit="N" position="S" id="oapBackBtn2" errordiv="oapBackBtn2GrpErr" redirect_type="P" redirect_value="ITS_OAP_START" onclick="setRedirectTo(this);">
+                    </div>
+                    <div id="oapNextBtn2Prompt" style="text-align: right; float: left; padding-right: 5px;">
+                        <script id="promptScript_86">oapNextBtn2_prmt();</script>&nbsp;
+                    </div>
+                    <div id="oapNextBtn2Fld" tag="oapNextBtn2" pgseq="910" style="text-align: right; float: left;">
+                        <input type="submit" value="submit" checkmandatory="N" continue="Y" position="E" id="oapNextBtn2" errordiv="oapBackBtn2GrpErr" redirect_type="D" redirect_value="web.ws29pkg.ws29_setup_wap02_1;" onclick="setRedirectTo(this);">
+                    </div>
+                    <div id="oapBackBtn2GrpErr" class="ErrorDiv" style="float: left; display: inline-block;">&nbsp;</div>
+                    <div id="oapBackBtn2GrpErrMsg" style="float: left; display: none;">&nbsp;</div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+    

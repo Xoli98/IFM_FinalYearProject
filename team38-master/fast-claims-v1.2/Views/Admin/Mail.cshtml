@@ -1,0 +1,57 @@
+﻿@model IEnumerable<fast_claims_v1._2.Models.admin.MailBoxModel>
+@{
+    ViewBag.Title = "Mail";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <div class="mail-box">
+        <aside class="sm-side">
+            
+            <div class="inbox-body text-center">
+                <div class="btn-group">
+                    <a class="btn mini btn-primary" href="javascript:;">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+               
+                <div class="btn-group">
+                    <a class="btn mini btn-info" href="javascript:;">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </div>
+            </div>
+
+        </aside>
+        <aside class="lg-side">
+            <div class="inbox-head">
+                <h3>Inbox</h3>
+                
+            </div>
+            <div class="inbox-body">
+                
+                <table class="table table-inbox table-hover">
+                    <tbody>
+                        @for (int i = 0; i < 5; i++) {
+                            <tr class="unread">
+                                <td class="inbox-small-cells">
+                                    <input type="checkbox" class="mail-checkbox">
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="view-message  dont-show">PHPClass</td>
+                                <td class="view-message ">Added a new class: Login Class Fast Site</td>
+                                <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                                <td class="view-message  text-right">9:27 AM</td>
+                                <td><a href="#" class="btn btn-success">read</a>
+                                    <a href="#" class="btn btn-danger">delete</a>
+                                </td>
+                        </tr>
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+    </div>
+</div>

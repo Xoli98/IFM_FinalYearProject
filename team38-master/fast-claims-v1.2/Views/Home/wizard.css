@@ -1,0 +1,417 @@
+/* *****************************************************************************
+   Program  : wizard.css
+   Version  : v03.0.0.0
+   Changes  : 19-Mar-2010 DG T161180 Wizard development
+            : 11-Aug-2011 DG T172812/T176105 E-Payment integration
+            : 24-MAY-2012 CM F182326 Add label.chkBoxLbl to cater for word
+            :                alignment for check boxes where text is on
+            :                right side of check box.
+            : 07-Aug-2012 DG F184301 Fix syntax and errors with CSS IE8
+            :             font-weight, align
+            : 06-Sep-2012 DG F184301 Change H1-H4 font-size properties
+            : 28-Nov-2013 DG 194310 Standardise fieldset displays
+            : 11-Nov-2014 DG 202836 Added: Missing 182381 & 194310 fixes. 
+            :                              Style wizardstd, chkBoxLbl & clearlov
+   *****************************************************************************
+*/
+
+body {
+	 margin : 0;
+ background-color: transparent;
+ background-repeat: repeat;
+ background-image: none;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 10pt;
+}
+
+.iddocument{
+	border-style: solid;
+	float: left;
+	width:80%;
+}
+
+div .workstation{
+	
+}
+
+.framebody {
+ background-color: #FFFFFF;
+ background-image: none;
+ font-size: 9pt;
+}
+
+img {
+ border:0;
+}
+
+h1 {
+ color: #5272AF;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: medium; 
+ font-style: normal;
+ font-weight: 900;
+ letter-spacing: normal;
+ margin-top: 0px;
+ text-decoration: none;
+ text-transform: none;
+ word-spacing: normal;
+}
+
+h2 {
+ color: #5272AF;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: medium; 
+ font-style: normal;
+ font-weight: 800;
+ letter-spacing: normal;
+ margin: 7px 0px 2px;
+ text-decoration: none;
+ text-transform: none;
+ word-spacing: normal;
+}
+
+h3 {
+ color: #5272AF;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: small; 
+ font-style: normal;
+ font-weight: 400;
+ letter-spacing: normal;
+ margin: 7px 0px 2px;
+ text-decoration: none;
+ text-transform: none;
+ word-spacing: normal;
+ padding-top: 1em;
+}
+
+h4 {
+ color: #5272AF;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: x-small; 
+ font-style: normal;
+ font-weight: 200;
+ letter-spacing: normal;
+ margin: 7px 0px 2px;
+ text-decoration: none;
+ text-transform: none;
+ word-spacing: normal;
+ padding-top: 1em;
+}
+
+table.mi_userdet {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 10pt;
+ background-color: #ECE9D8;
+}
+
+
+div, label {
+ font-size: 9pt;  
+}
+
+/* This is used for reporting errors on insert/update/delete screens */
+.ErrorDiv {
+ margin-left: 5px; 
+}
+
+/* This class is added by default to the process div included on all pages */
+div.process {
+ border-style: solid;
+ border-color: #EDEDED;
+ border-width: 5px;
+ border-top: 20px solid #EDEDED;
+ border-bottom: 10px solid #EDEDED;
+ width: 80%;
+ padding-left: 5px; 
+}
+
+/* Class linked to home image for quick links */
+/* F182381 Fix deprecated align style */
+#home_img {
+ float: left;
+}
+
+.bc_home {
+ font-weight:bold;
+}
+
+.bc_current {
+ color: #C0C0C0;
+}
+
+
+/* Override itscustom.css for document loading */
+.rowover {
+ background-color: #EDEDED;
+}
+
+tr.rlheader {
+ background-color: #EDEDED;
+}
+
+/* T172812 Override itscustom.css for e-payment */
+td.datahdr {
+  text-align: right; 
+  float: left; 
+  width: 125px;
+}
+
+/* Breadcrumb Style Definition */
+#breadCrumbs {
+ background-image:url('/itsimages/bc_bg.jpg'); 
+ background-repeat:repeat-x;
+ background-color: #E6E6E6;
+ height:20px;
+ font: 10px Arial, Helvetica, sans-serif;
+ line-height:20px;
+ color:#888;
+ border:solid 1px #cacaca;
+ width:100%;
+ overflow:hidden;
+ margin:0px;
+ padding:0px;
+}
+
+#breadCrumbs span {
+ list-style-type:none;
+ padding-left:10px;
+ display:inline-block;
+ float:left;
+}
+
+#breadCrumbs a {
+ display:inline-block;
+ background-image:url('/itsimages/bc_separator.png');
+ background-repeat:no-repeat; 
+ background-position:right;
+ padding-top: 3px;
+ padding-right: 15px;
+ text-decoration: none;
+ color:#333333;
+ outline:none;
+ font: 10px Arial, Helvetica, sans-serif;
+}
+
+#crumbsPopUp {
+ background-color: #E6E6E6;
+}
+
+#crumbsPopUp span {
+ list-style-type:none;
+ padding-left:10px;
+}
+
+#crumbsPopUp a {
+ background-image:url('/itsimages/bc_separator.png'); 
+ background-repeat:no-repeat; 
+ background-position:left;
+ padding-top: 3px;
+ padding-left: 15px;
+ text-decoration: none;
+ color:#333333;
+ outline:none;
+ font: 10px Arial, Helvetica, sans-serif;
+}
+
+#crumbsPopUp br {
+height: 0px;
+}
+
+/* Picking list Style Definition */
+fieldset.pickinglist {
+ clear: both;    
+ width: auto;    
+ padding-bottom: 1em;
+ padding-left: 5px;
+ border: 1px solid #BFBAB0;    
+}
+
+fieldset.pickinglist legend {
+ margin-left: 1em;    
+ padding: 0;
+ color: #000;    
+ font-weight: bold;
+}
+
+fieldset.pickinglist table {
+ margin: 0 1em 0 1em;
+}
+
+fieldset.pickinglist th {
+ font-weight: bold;
+ background: #E3DEB4;
+ background-image: url('/itsimages/bc_bg.jpg'); 
+ background-repeat: repeat;
+ padding-left:5px;
+ font-size: 9pt;
+}
+
+fieldset.pickinglist td {
+ padding-left:5px;
+ background: #FFE8EF;
+ font-size: 9pt;
+}
+
+/* Wizard data display style Definition */
+/* F182381 add text-align for IE display */
+/* 194310 Standardise fieldset display */
+fieldset.wizarddisplay {
+ clear: both;    
+ width: 725px;    
+ border: 1px solid #BFBAB0;
+ text-align: left;
+}
+
+fieldset.wizarddisplay div {
+ color: gray;
+}
+
+fieldset.wizarddisplay legend {
+ margin-left: 1em;    
+ padding: 0;
+ color: #0645AD;
+ font-weight: bold;
+ font-size: 10pt;
+}
+
+fieldset.wizarddisplay table {
+ font-weight: normal;
+ font-size: 9pt;
+}
+
+fieldset.wizarddisplay th {
+ background-color: #F2F2F2;
+ border: 1px solid #BFBAB0;
+}
+
+fieldset.wizarddisplay tr {
+ color: gray;
+}
+
+/* Wizard fieldset display style Definition (202836)*/
+fieldset.wizardstd {
+ clear: both;    
+ width: 725px;    
+ border: 1px solid #BFBAB0;
+}
+
+fieldset.wizardstd legend {
+ margin-left: 1em;    
+ padding-top: 5px;
+ color: #0645AD;
+ font-weight: bold;
+ font-size: 10pt;
+}
+
+tr.oddRow {
+ background-color: #D5EFFE;
+}
+
+tr.evenRow {
+ background-color: #ECECEC;
+}
+
+/* LOV Style Definition */
+#listOfValues {
+ font-size: 15px;
+ font-family: Arial, Helvetica, sans-serif;
+ padding:0px;
+}
+
+#listOfValues table {
+ background-color: #E6E6E6;
+ border: 1px solid #BFBAB0;
+ font-size: 12px;
+ margin:5px;
+ padding:5px;
+}
+
+#listOfValues input {
+ margin:5px;
+}
+
+#listOfValues p {
+ font-size: 12px;
+ margin:5px;
+}
+
+#lovHelp {
+ background-color: #E6E6E6;
+ border: 1px solid #BFBAB0;
+ font-size: 12px;
+ margin:5px;
+ padding:5px;
+}
+
+/* Wizard generic error */
+#genericErrorDiv {
+ color: red;
+ font-size: 12px;
+ font-weight: bold;
+ font-style: italic;
+}
+
+.ErrorDiv {
+ color: red;
+ font-weight: bold;
+ font-style: italic;
+}
+
+.mandatory_fld {
+ color: red; 
+ font-weight: bold; 
+ font-size: 10pt;
+}
+
+/* Hiding Skype numbers */
+@media screen {span.skype_pnh_print_container{ display:inline !important;} span.skype_pnh_container{ display:none !important;}} span.skype_pnh_mark{ display:inline !important;}
+
+/* Record list styles */
+table.mrtbl {
+ color:#000000;
+ font-family:Geneva,Helvetica,Arial,Verdana,sans-serif;
+ font-size:12px;
+ border:1px solid gray;
+}
+
+tr.mrhead th {
+ background-color:#EDEDED;
+ font-weight:bold;
+ padding-left: 5px;
+ padding-right: 5px;
+}
+
+tr.mrchar td {
+ text-align:left;
+}
+
+tr.mrnbr td {
+ text-align:right;
+}
+
+/* Check box labels (202836)*/
+.chkBoxLbl {
+  text-align:justify; 
+  width:500px;
+  padding-left:5px;
+  vertical-align:top;
+}
+
+/* Clear LOV HREF anchor (202836)*/
+a.clearlov {
+  font-size: 10pt;
+  padding-left: 5px;
+  font-family: Verdana, Arial, Helvetica, sans-serif
+}
+
+a.clearlov:hover {
+  font-weight: 800;
+}
+
+a.clearlov:link {
+  color: #5272af;
+}
+
+a.clearlov:visited {
+  color: #5272af;
+}
